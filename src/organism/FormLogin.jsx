@@ -2,10 +2,7 @@ import { useState } from 'react'
 import Input from '../molecules/Input.jsx'
 import ButtonSR from '../atoms/ButtonSR.jsx'
 
-import '../styles/signUp.css'
-import '../styles/global.css'
-
-function FormLogin() {
+function FormLogin({className}) {
     const emailRegex = /^.+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s]).{8,}$/;
 
@@ -46,19 +43,18 @@ function FormLogin() {
         } else {
             setValidUser('User Not Found !!');
         }
-
-
     }
 
+    const classCText = "mt-[26px] flex flex-col justify-start w-full text-start"
 
   return (
-    <form onSubmit={handleSubmit}>
-        <Input divClass='ctText' labelFor='email' labelMsg='Email' inputType='email' inputName='email' inputId='email' inputPlaceholder="Enter your email" />
+    <form onSubmit={handleSubmit} className={className}>
+        <Input divClass={classCText} labelFor='email' labelMsg='Email' inputType='email' inputName='email' inputId='email' inputPlaceholder="Enter your email" />
         <br></br><p>{emailValid}</p>
-        <Input divClass='ctText' labelFor='pass' labelMsg='Password' inputType='password' inputName='pass' inputId='pass' inputPlaceholder="Enter your password" />
+        <Input divClass={classCText} labelFor='pass' labelMsg='Password' inputType='password' inputName='pass' inputId='pass' inputPlaceholder="Enter your password" />
         <br></br><p>{passValid}</p>
-        <div>
-            <a href="#">Forgot your password?</a>
+        <div className='flex justify-end flex-row'>
+            <a href="#" className='text-[#1D4ED8] text-base font-normal tracking-[1px] mt-[26px]'>Forgot your password?</a>
         </div>
         <ButtonSR type='submit' msg='Login' />
         <br /><h1>{userValid}</h1>
