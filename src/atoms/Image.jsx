@@ -1,8 +1,7 @@
-import React from 'react'
 
-function Image(props) {
+function Image({src, alt, className}) {
   return (
-     <img src={props.src} alt={props.alt} />
+     <img src={src} alt={alt} className={className}/>
   )
 }
 
