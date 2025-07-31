@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router'
 
-function NavButton({aClass, liClass, content}) {
+function NavButton({aClass, liClass, content, path}) {
   return (
     <li className={liClass}>
-        <a className={aClass} >{content}</a>
+        <Link className={aClass} to={path}>{content}</Link>
     </li>
   )
 }
