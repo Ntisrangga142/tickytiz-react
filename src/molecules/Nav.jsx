@@ -5,9 +5,9 @@ function Nav() {
   return (
     <nav>
       <ul className="w-full flex flex-row justify-between gap-[60px]">
-        <NavButton aClass={aClass} liClass="list-none" content="Home"/>
-        <NavButton aClass={aClass} liClass="list-none" content="Movie"/>
-        <NavButton aClass={aClass} liClass="list-none" content="Buy Ticket"/>
+        <NavButton aClass={aClass} liClass="list-none" content="Home" path='/'/>
+        <NavButton aClass={aClass} liClass="list-none" content="Movie" path='/Movie'/>
+        <NavButton aClass={aClass} liClass="list-none" content="Buy Ticket" path='/'/>
       </ul>
     </nav>
   );
